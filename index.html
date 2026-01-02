@@ -26,6 +26,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script type="module" crossorigin src="./assets/index-UcBIJ00N.js"></script>
+    <script>
+      (function () {
+        var script = document.querySelector('script[type="module"][src]');
+        if (!script) {
+          window.__LUMOS_BASE__ = "/";
+          return;
+        }
+        try {
+          var abs = new URL(script.getAttribute("src"), window.location.href);
+          var base = abs.pathname.replace(/\/assets\/[^/]+$/, "");
+          window.__LUMOS_BASE__ = base || "/";
+        } catch (e) {
+          window.__LUMOS_BASE__ = "/";
+        }
+      })();
+    </script>
     <link rel="stylesheet" crossorigin href="./assets/index-BW-kdqT1.css">
   </head>
 
